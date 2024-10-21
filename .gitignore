@@ -1,7 +1,6 @@
 # For the GenAIOps Wokshop
 local/
 dist/
-.env
 .promptflow/
 junit/
 *.xlsx
