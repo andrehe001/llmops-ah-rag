@@ -118,9 +118,9 @@ def deploy_flow(endpoint_name, deployment_name):
             "AZURE_OPENAI_CHAT_DEPLOYMENT": os.getenv("AZURE_OPENAI_CHAT_DEPLOYMENT"),
             "AZURE_OPENAI_EMBEDDING_MODEL": os.getenv("AZURE_OPENAI_EMBEDDING_MODEL"),
             "AZURE_OPENAI_EMBEDDING_DEPLOYMENT": os.getenv("AZURE_OPENAI_EMBEDDING_DEPLOYMENT"),
-            "AZURE_CLIENT_ID": os.getenv["AZURE_CLIENT_ID"],
-            "AZURE_TENANT_ID": os.getenv["AZURE_TENANT_ID"],
-            "AZURE_CLIENT_SECRET": os.getenv["AZURE_CLIENT_SECRET"]# using the same name for the deployment as the model for simplicity
+            "AZURE_CLIENT_ID": os.environ["AZURE_CLIENT_ID"],
+            "AZURE_TENANT_ID": os.environ["AZURE_TENANT_ID"],
+            "AZURE_CLIENT_SECRET": os.environ["AZURE_CLIENT_SECRET"]# using the same name for the deployment as the model for simplicity
         }
     )
 

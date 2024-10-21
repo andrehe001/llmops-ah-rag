@@ -43,9 +43,10 @@ class AzureConfig:
         the necessary Azure clients, including MLClient and CognitiveServicesManagementClient.
         """
         # Load essential environment variables, ensuring necessary configurations are set
-        self.subscription_id = self.get_env_var("AZURE_SUBSCRIPTION_ID")
-        self.resource_group = self.get_env_var("AZURE_RESOURCE_GROUP")
-        self.workspace_name = self.get_env_var("AZUREAI_PROJECT_NAME")
+        self.subscription_id = os.getenv("AZURE_SUBSCRIPTION_ID")
+        self.resource_group = os.getenv("AZURE_RESOURCE_GROUP")
+        self.workspace_name = os.getenv("AZUREAI_PROJECT_NAME")
+       
         self.check_missing_vars()
 
         # If essential variables are provided, initialize Azure clients
@@ -71,8 +72,8 @@ class AzureConfig:
             self.location = self.workspace.location  # Use workspace location if available
 
             # Retrieve service connections for Azure OpenAI and AI Search
-            self.aoai_connection = self.ml_client.connections.get('aoai-connection')
-            self.search_connection = self.ml_client.connections.get('rag-search')
+            self.aoai_connection = self.ml_client.connections.get('aoaiwltsol7n67n6e_aoai')
+            self.search_connection = self.ml_client.connections.get('srchwltsol7n67n6e')
 
             # Extract Azure OpenAI endpoint and API version from the connection metadata
             self.aoai_endpoint = self.aoai_connection.target
