@@ -3,6 +3,8 @@ import json
 import argparse
 from datetime import datetime
 import promptflow as pf
+from dotenv import load_dotenv
+load_dotenv()
 
 from promptflow.client import PFClient
 from promptflow.core import AzureOpenAIModelConfiguration

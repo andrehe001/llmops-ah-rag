@@ -21,8 +21,9 @@ client = MLClient(
     DefaultAzureCredential(),
     azure_config.subscription_id,
     azure_config.resource_group,
-    azure_config.workspace_name,
+    azure_config.workspace_name
 )
+
 
 def get_ai_studio_url_for_deploy(
     client: MLClient, endpoint_name: str, deployment_name
@@ -109,18 +110,15 @@ def deploy_flow(endpoint_name, deployment_name):
         instance_count=1,
         environment_variables={
             "PRT_CONFIG_OVERRIDE": f"deployment.subscription_id={client.subscription_id},deployment.resource_group={client.resource_group_name},deployment.workspace_name={client.workspace_name},deployment.endpoint_name={endpoint_name},deployment.deployment_name={deployment_name}",
-            "AZURE_SUBSCRIPTION_ID": os.environ["AZURE_SUBSCRIPTION_ID"],
-            "AZURE_RESOURCE_GROUP": os.environ["AZURE_RESOURCE_GROUP"],
-            "AZUREAI_PROJECT_NAME": os.environ["AZUREAI_PROJECT_NAME"],
-            "AZURE_OPENAI_ENDPOINT": azure_config.aoai_endpoint,
-            "AZURE_OPENAI_API_VERSION": azure_config.aoai_api_version,
-            "AZURE_SEARCH_ENDPOINT": azure_config.search_endpoint,
-            "AZURE_OPENAI_CHAT_DEPLOYMENT": os.getenv("AZURE_OPENAI_CHAT_DEPLOYMENT"),
-            "AZURE_OPENAI_EMBEDDING_MODEL": os.getenv("AZURE_OPENAI_EMBEDDING_MODEL"),
-            "AZURE_OPENAI_EMBEDDING_DEPLOYMENT": os.getenv("AZURE_OPENAI_EMBEDDING_DEPLOYMENT"),
-            "AZURE_CLIENT_ID": os.getenv["AZURE_CLIENT_ID"],
-            "AZURE_TENANT_ID": os.getenv["AZURE_TENANT_ID"],
-            "AZURE_CLIENT_SECRET": os.getenv["AZURE_CLIENT_SECRET"]# using the same name for the deployment as the model for simplicity
+            "AZURE_SUBSCRIPTION_ID": "27df8863-118d-4257-a621-4ff69f2970ef",
+            "AZURE_RESOURCE_GROUP": "rag-project",
+            "AZUREAI_PROJECT_NAME": "ai-project-wltsol7n67n6e",
+            "AZURE_OPENAI_ENDPOINT": "https://aoai-wltsol7n67n6e.openai.azure.com/",
+            "AZURE_OPENAI_API_VERSION": "2023-05-15",
+            "AZURE_SEARCH_ENDPOINT": "https://srch-wltsol7n67n6e.search.windows.net/",
+            "AZURE_OPENAI_CHAT_DEPLOYMENT": "gpt-35-turbo",
+            "AZURE_OPENAI_EMBEDDING_MODEL": "text-embedding-ada-002",
+            "AZURE_OPENAI_EMBEDDING_DEPLOYMENT": "text-embedding-ada-002"  # using the same name for the deployment as the model for simplicity
         }
     )
 
