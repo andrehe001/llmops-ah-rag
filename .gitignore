@@ -1,7 +1,6 @@
 # For the GenAIOps Wokshop
 local/
 dist/
-.env
 .promptflow/
 junit/
 *.xlsx
@@ -89,11 +88,6 @@ coverage/
 dmypy.json
 
 # Environments
-.env
-.env.*.local
-.env.local
-.env.*.json
-.env.json
 
 # Azure Functions
 .local.settings.json
