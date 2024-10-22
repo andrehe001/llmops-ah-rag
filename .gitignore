@@ -45,14 +45,7 @@ $RECYCLE.BIN/
 *.iml
 
 # Azure specific
-*.log
-*.azure
-.azuresettings
-azure-pipelines.yml
-terraform.tfstate
-terraform.tfstate.backup
-.terraform/
-.azure/
+
 
 # PyCharm
 # Commented out as it may conflict with .idea/
