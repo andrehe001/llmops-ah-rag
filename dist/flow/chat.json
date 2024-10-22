@@ -1,0 +1,10 @@
+{
+  "documents": {
+    "id": "16",
+    "title": "Medical Record Access Policy",
+    "content": "Patients have the right to access their medical records. Records can be viewed online via our secure patient portal or requested in paper form.",
+    "url": "https://lamnahealthcare.com/medical-records"
+  },
+  "question": "How can I access my medical records?", 
+  "chat_history": []
+}

@@ -1,0 +1,13 @@
+{
+    "function": "get_response",
+    "inputs": {
+        "question": {
+            "type": "object"
+        },
+        "chat_history": {
+            "type": "object"
+        }
+    },
+    "entry": "chat_request:get_response",
+    "name": "flow"
+}
